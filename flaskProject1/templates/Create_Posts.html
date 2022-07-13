@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{%block body%}
+    <form action="/Posts2/create", method="POST">
+    Title<input type="text" name="title" id="title">
+    <br>
+    Post<input type="text" name="content" id="content">
+    <br>
+        Enter Author name: <input type="text" name = 'author', id = 'author'>
+    <br>
+    <input type="submit" value="Post">
+    </form>
+
+{% endblock %}

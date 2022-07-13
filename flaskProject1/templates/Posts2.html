@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+    <a class="btn btn-primary" href="/Posts2/create" role="button"><h2> Create Blog Post</h2></a>
+    <br>
+     <h3> All Posts </h3><
+    {% for post in posts %}
+        <h1>{{ post.title }}</h1>
+        {% if post.author %}
+            <h3>{{ post.author }}</h3>
+        {% else %}
+            <h3>N/A</h3>
+        {% endif %}
+        <h2>{{ post.content }}</h2>
+        <form action = "/delete/{{ post.id }}" method = "GET">
+        <input type="submit" value = "Delete">
+        </form>
+        <form action = "/Posts2/edit/{{ post.id }}" method = "GET">
+        <input type="submit" value = "Edit">
+        </form>
+    {% endfor %}
+
+{% endblock %}
